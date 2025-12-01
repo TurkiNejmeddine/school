@@ -25,15 +25,13 @@ services:
         "spring.jpa.hibernate.ddl-auto" : "update"
       }'
     stdin_open: true
-    tty: true
-	
-  app-frontend
+    tty: true	
+  app-frontend:
 	depends_on:
       - app-backend
-	image: nejmeddineturki/school-1.1.0
+	image: mouradhassini/student-front-image:1.0.0
 	restart: on-failure
     ports:
       - 8585:85
-
 volumes:
   db :
