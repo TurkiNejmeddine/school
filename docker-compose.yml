@@ -26,6 +26,14 @@ services:
       }'
     stdin_open: true
     tty: true
+	
+  app-frontend
+	depends_on:
+      - app-backend
+	image: nejmeddineturki/school-1.1.0
+	restart: on-failure
+    ports:
+      - 8585:85
 
 volumes:
   db :
